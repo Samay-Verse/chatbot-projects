@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groq Chatbot</title>
+    <!-- Use Tailwind CSS for a modern and responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .chat-container {
+            height: calc(100vh - 8rem); /* Adjust height to fill most of the viewport */
+            overflow-y: auto; /* Enable scrolling for chat history */
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-2xl bg-white rounded-2xl shadow-xl flex flex-col h-[90vh]">
+        
+        <!-- Chatbot Header -->
+        <div class="p-5 border-b border-gray-200 flex items-center justify-between bg-emerald-500 text-white rounded-t-2xl">
+            <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <h1 class="text-2xl font-bold">Your Best Friend Chatbot</h1>
+            </div>
+        </div>
+
+        <!-- Chat messages container -->
+        <div id="chat-box" class="chat-container flex-grow p-5 space-y-4">
+            <!-- Initial bot message -->
+            <div class="flex justify-start">
+                <div class="bg-gray-100 p-4 rounded-xl max-w-[85%] text-gray-800 shadow-sm">
+                    Hey! I'm your new best friend. What's up? How can I make your day better? ✨
+                </div>
+            </div>
+        </div>
+
+        <!-- Input area -->
+        <div class="p-5 border-t border-gray-200">
+            <div class="flex items-center space-x-3">
+                <input
+                    type="text"
+                    id="user-input"
+                    class="flex-grow p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all shadow-sm"
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                />
+                <button
+                    id="send-button"
+                    class="bg-emerald-500 text-white p-4 rounded-xl hover:bg-emerald-600 transition-colors shadow-md disabled:bg-gray-400"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
