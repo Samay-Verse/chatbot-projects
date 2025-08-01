@@ -87,3 +87,8 @@
 #     except Exception as e:
 #         # Return a meaningful error message if something goes wrong
 #         raise HTTPException(status_code=500, detail=str(e))
+
+
+
+def show():
+    print('happy coding')
